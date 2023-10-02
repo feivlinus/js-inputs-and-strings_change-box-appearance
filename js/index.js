@@ -47,4 +47,7 @@ randomButton.addEventListener("click", () => {
       border-radius: ${randomBorderRadiusValue}%;
       transform: rotate(${randomRotationValue}deg);
     `;
+  colorInput.value = randomColorValue;
+  borderRadiusInput.value = randomBorderRadiusValue;
+  rotationInput.value = randomRotationValue;
 });
