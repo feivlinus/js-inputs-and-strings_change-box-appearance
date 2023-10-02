@@ -24,18 +24,23 @@ const rotationInput = document.querySelector('[data-js="input-rotation"]');
 const randomButton = document.querySelector('[data-js="random-button"]');
 
 colorInput.addEventListener("change", () => {
+  console.log("Change Color!");
   const newColorValue = colorInput.value;
-  box.style = `background: hsl(${newColorValue} , 100%, 50%)`;
+  box.style.background = `hsl(${newColorValue} , 100%, 50%)`;
+  //box.style += 'background: hsl('+ newColorValue +'} , 100%, 50%)';
 });
 
 borderRadiusInput.addEventListener("change", () => {
+  console.log("Change Border-radius!");
   const newBorderRadiusValue = borderRadiusInput.value;
-  box.style = `border-radius: ${newBorderRadiusValue}%;`;
+  console.log(borderRadiusInput.style);
+  box.style.borderRadius = `${newBorderRadiusValue}%`;
 });
 
 rotationInput.addEventListener("change", () => {
+  console.log("Change Rotation!");
   const newRotationValue = rotationInput.value;
-  box.style = `transform: rotate(${newRotationValue}deg);`;
+  box.style.transform = `rotate(${newRotationValue}deg)`;
 });
 
 randomButton.addEventListener("click", () => {
