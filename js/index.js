@@ -16,3 +16,35 @@ For further information check MDN:
 - about CSS declarations with "style": https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
 
 */
+
+const box = document.querySelector('[data-js="box"]');
+const colorInput = document.querySelector('[data-js="input-color"]');
+const borderRadiusInput = document.querySelector('[data-js="input-radius"]');
+const rotationInput = document.querySelector('[data-js="input-rotation"]');
+const randomButton = document.querySelector('[data-js="random-button"]');
+
+colorInput.addEventListener("change", () => {
+  const newColorValue = colorInput.value;
+  box.style = `background: hsl(${newColorValue} , 100%, 50%)`;
+});
+
+borderRadiusInput.addEventListener("change", () => {
+  const newBorderRadiusValue = borderRadiusInput.value;
+  box.style = `border-radius: ${newBorderRadiusValue}%;`;
+});
+
+rotationInput.addEventListener("change", () => {
+  const newRotationValue = rotationInput.value;
+  box.style = `transform: rotate(${newRotationValue}deg);`;
+});
+
+randomButton.addEventListener("click", () => {
+  const randomColorValue = Math.floor(Math.random() * 361);
+  const randomBorderRadiusValue = Math.floor(Math.random() * 51);
+  const randomRotationValue = Math.floor(Math.random() * 181);
+  box.style = `
+      background: hsl(${randomColorValue} , 100%, 50%);
+      border-radius: ${randomBorderRadiusValue}%;
+      transform: rotate(${randomRotationValue}deg);
+    `;
+});
